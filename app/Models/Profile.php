@@ -19,4 +19,10 @@ class Profile extends Model
     public function user() {
         return $this->belongsTo(User::class);
     }
+
+    // Used for pivot table profile_user
+    public function followers()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

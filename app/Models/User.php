@@ -60,4 +60,10 @@ class User extends Authenticatable
     public function posts() {
         return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
     }
+
+    // Used for pivot table profile_user
+    public function following()
+    {
+        return $this->belongsToMany(Profile::class);
+    }
 }
